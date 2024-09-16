@@ -1,5 +1,5 @@
 import { AfterViewInit, Directive, Host, Optional, Self } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { CdkTableExporter, DataExtractorService, ServiceLocatorService } from 'cdk-table-exporter';
 import { Observable } from 'rxjs';
@@ -74,8 +74,8 @@ export class MatTableExporterDirective extends CdkTableExporter implements After
   /**
    * MatTable implementation of getPageChangeObservable
    */
-  public getPageChangeObservable(): Observable<any> | undefined {
-    return this.getPaginator()?.page;
+  public getPageChangeObservable(): Observable<PageEvent> | undefined {
+    return this.getPaginator()?.page.asObservable();
   }
 
   private getDataSource(): MatTableDataSource<any> {

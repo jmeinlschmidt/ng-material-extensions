@@ -15,7 +15,8 @@
     "@angular/core": "^17.1.1",
     "@angular/material": "^17.1.1",
     "@angular/animations": "^17.1.1",
-    "@angular/forms": "^17.1.1"
+    "@angular/forms": "^17.1.1",
+    "rxjs": "7.5.7"
   },
   "dependencies": {
     "cdk-table-exporter": "file:../cdk-table-exporter",
